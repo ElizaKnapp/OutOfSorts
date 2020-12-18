@@ -20,7 +20,25 @@ public class Sorts {
         i = data.length;
       }
     }
-
   }
+
+  public static void selectionSort(int[] data) {
+    int indexOfLow = 0;
+    for (int i = 0; i < data.length - 1; i++) {
+      indexOfLow = 0;
+      for (int j = i; j < data.length; j++) {
+        if (data[j] < data[indexOfLow]) {
+          indexOfLow = j;
+        }
+      }
+      int temp = data[0];
+      data[0] = data[indexOfLow];
+      data[indexOfLow] = temp;
+    }
+  }
+
+//  public static void insertionSort(int[] data) {
+
+//  }
 
 }
