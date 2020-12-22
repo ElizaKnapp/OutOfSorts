@@ -31,8 +31,8 @@ public class Sorts {
           indexOfLow = j;
         }
       }
-      int temp = data[0];
-      data[0] = data[indexOfLow];
+      int temp = data[i];
+      data[i] = data[indexOfLow];
       data[indexOfLow] = temp;
     }
   }
