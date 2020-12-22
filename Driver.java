@@ -21,7 +21,54 @@ public class Driver{
           }
         int[] clone = testArr.clone();
         Arrays.sort(clone);
-        //Substitute here for different sorts
+        Sorts.bubbleSort(testArr);
+        if (!Arrays.equals(clone, testArr)) {
+          error++;
+        }
+      }
+      if (error == 0) {
+        System.out.println("everything works");
+      }
+      else {
+        System.out.println("there is a problem with random sort no duplicates");
+      }
+    }
+    if(args[0].equals("selection")){
+      int error = 0;
+      for (int j = 0; j < times; j++) {
+        Random num = new Random();
+        int seed = num.nextInt()  % 1000;
+        Random tester = new Random(seed);
+        int[] testArr = new int[length];
+          for (int i = 0; i < length; i++) {
+            testArr[i] = tester.nextInt() % 1000;
+          }
+        int[] clone = testArr.clone();
+        Arrays.sort(clone);
+        Sorts.selectionSort(testArr);
+        if (!Arrays.equals(clone, testArr)) {
+          error++;
+        }
+      }
+      if (error == 0) {
+        System.out.println("everything works");
+      }
+      else {
+        System.out.println("there is a problem with random sort no duplicates");
+      }
+    }
+    if(args[0].equals("insertion")){
+      int error = 0;
+      for (int j = 0; j < times; j++) {
+        Random num = new Random();
+        int seed = num.nextInt()  % 1000;
+        Random tester = new Random(seed);
+        int[] testArr = new int[length];
+          for (int i = 0; i < length; i++) {
+            testArr[i] = tester.nextInt() % 1000;
+          }
+        int[] clone = testArr.clone();
+        Arrays.sort(clone);
         Sorts.insertionSort(testArr);
         if (!Arrays.equals(clone, testArr)) {
           error++;
