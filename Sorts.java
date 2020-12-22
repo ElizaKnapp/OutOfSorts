@@ -37,7 +37,7 @@ public class Sorts {
     }
   }
 
-  public static void insertionSort(int[] data) { //FIX- MAKE IT STOP EARLY
+  public static void insertionSort(int[] data) { 
     for (int i = 1; i < data.length; i++) {
       int temp = data[i]; //thing we're trying to place
       int j = i - 1;
