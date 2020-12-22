@@ -1,29 +1,40 @@
-import java.util.Arrays;
+import java.util.*;
+import java.io.*;
+
 public class Driver{
 
   public static void main(String[]args){
-    //args 0 must be size of the Array
-    //args 1 must be "bubble" or "test" (unless you add more)
-    int[] randData = new int[Integer.parseInt(args[0])];
+    //args 0 must be "bubble" or "test" (unless you add more)
 
-    for(int i = 0 ; i < randData.length; i++){
-      randData[i] =(int)(Math.random()*10000);
-    }
+    int length = 100; //change this to make the array longer
+    int times = 1000; //change this to make more individual test cases
 
-    if(args[1].equals("bubble")){
-      Sorts.bubbleSort(randData);
-    }
-    if(args[1].equals("test")){
-      int[] randDataBubble = Arrays.copyOf(randData,randData.length);
-      Arrays.sort(randData);
-      Sorts.bubbleSort(randDataBubble);
-
-
-      if( Arrays.equals(randData,randDataBubble)){
-        System.out.println("Bubble Correct!");
-      }else{
-       System.out.println("Bubble Not Correct!!!!!!!!!11oneeleven");
+    if(args[0].equals("bubble")){
+      int error = 0;
+      for (int j = 0; j < times; j++) {
+        Random num = new Random();
+        int seed = num.nextInt()  % 1000;
+        Random tester = new Random(seed);
+        int[] testArr = new int[length];
+          for (int i = 0; i < length; i++) {
+            testArr[i] = tester.nextInt() % 1000;
+          }
+        int[] clone = testArr.clone();
+        Arrays.sort(clone);
+        //Substitute here for different sorts
+        Sorts.insertionSort(testArr);
+        if (!Arrays.equals(clone, testArr)) {
+          error++;
+        }
+      }
+      if (error == 0) {
+        System.out.println("everything works");
+      }
+      else {
+        System.out.println("there is a problem with random sort no duplicates");
       }
     }
+
+
   }
 }
