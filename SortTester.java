@@ -18,7 +18,8 @@ public class SortTester {
         }
       int[] clone = testArr.clone();
       Arrays.sort(clone);
-      Sorts.selectionSort(testArr);
+      //Substitute here for different sorts
+      Sorts.insertionSort(testArr);
       if (!Arrays.equals(clone, testArr)) {
         error++;
       }
@@ -31,7 +32,7 @@ public class SortTester {
     }
 
     int[] test = new int[] {6, 5, 4, 3, 2, 1};
-    Sorts.selectionSort(test);
+    Sorts.insertionSort(test);
     System.out.println(Arrays.toString(test));
 
     //here- add test cases that are already sorted and reverse sorted

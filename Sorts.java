@@ -39,13 +39,13 @@ public class Sorts {
 
   public static void insertionSort(int[] data) {
     for (int i = 1; i < data.length; i++) {
-      for (int j = i - 1; j >= 0; j--) {
-        if (data[i] >= data[j]) {
-          //insert data i at j + 1
-          int temp = data[j + 1];
-          data[j + 1] = data[i];
-        }
+      int temp = data[i]; //thing we're trying to place
+      int j = i - 1;
+      while (j >= 0 && data[j] > temp) { //while the data hasn't yet found it's place
+        data[j + 1] = data[j]; //shift the stuff over one into i's spot
+        j--; //move to the next shift
       }
+      data[j + 1] = temp; //finally replace the now empty spot with the original data
     }
   }
 
