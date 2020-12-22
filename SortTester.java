@@ -30,6 +30,10 @@ public class SortTester {
       System.out.println("there is a problem with random sort no duplicates");
     }
 
+    int[] test = new int[] {6, 5, 4, 3, 2, 1};
+    Sorts.selectionSort(test);
+    System.out.println(Arrays.toString(test));
+
     //here- add test cases that are already sorted and reverse sorted
     //also random with many duplicates
 

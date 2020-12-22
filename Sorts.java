@@ -25,7 +25,7 @@ public class Sorts {
   public static void selectionSort(int[] data) {
     int indexOfLow = 0;
     for (int i = 0; i < data.length - 1; i++) {
-      indexOfLow = 0;
+      indexOfLow = i;
       for (int j = i; j < data.length; j++) {
         if (data[j] < data[indexOfLow]) {
           indexOfLow = j;
